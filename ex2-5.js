@@ -1,4 +1,5 @@
 var fib = function(n){
+    // console.log(n);
     if (n < 2) return n;
     return fib(n - 1) + fib(n - 2);
 }
@@ -21,7 +22,7 @@ Obj.prototype.doSomething = function(arg1_) {
 }
 
 var test = new Obj();
-var number = 1000;
+var number = 20;
 
 test.doSomething(number, function(err, value) {
     if (err) {
