@@ -24,7 +24,7 @@ InputChecker.prototype.check = function check(input) {
     //process command
     //if wr, write to file
     if (command === 'wr:') {
-        this.emit('write', input.substr(3, input.length));
+        this.emit('write', input.substr(3, input.length).trim());
 
     //if en, end process
     } else if (command === 'en:') {
@@ -44,7 +44,7 @@ ic.on('write', function(data){
 });
 
 ic.on('echo', function(data){
-    process.stdout.write(ic.name + ' wrote ' + data);
+    process.stdout.write(this.name + ' wrote ' + data);
 });
 
 ic.on('end', function(){
