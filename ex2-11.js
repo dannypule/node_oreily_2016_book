@@ -34,8 +34,10 @@ writeStream.on('open', function(){
             if (err) {
               console.log(err.message);
             } else {
-              var adjData = data.replace(/somecompany\.com/g,
-                            'burningbird.net');
+              // var adjData = data.replace(/somecompany\.com/g,
+              //               'burningbird.net');
+
+              var adjData = new Date();
 
               // write to file
               fs.writeFile('./data/' + name, adjData, function(err){
@@ -44,7 +46,7 @@ writeStream.on('open', function(){
                 } else {
 
                   //log write
-                  writeStream.write('changed ' + name + '\n',
+                  writeStream.write('changed '+name+' '+new Date()+'\n',
                     'utf8',
                     function(err){
                       if (err) {
@@ -63,8 +65,6 @@ writeStream.on('open', function(){
           });
         });
       });
-
-      // console.log('all finished');
     }
   });
 });
