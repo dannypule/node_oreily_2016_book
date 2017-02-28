@@ -24,7 +24,7 @@ http.createServer(function (req, res) {
 
             file.on('error', function (err) {
                 console.log(err);
-                res.writeHead(403);
+                res.writeHead(403); 
                 res.write('file missing or permission problem');
                 res.end();
             });
